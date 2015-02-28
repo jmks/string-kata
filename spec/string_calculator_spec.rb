@@ -73,4 +73,12 @@ RSpec.describe StringCalculator, "#add" do
     # in this case, it truncates at the first non-digit character
     # so "1\n2".to_i returns 1
   end
+
+  # 7
+
+  context "allow delimiter in input" do 
+    it "returns 7 for '//;\n2;5'" do 
+      expect(StringCalculator.add("//;\n2;5")).to eql 7
+    end
+  end
 end
