@@ -69,6 +69,8 @@ RSpec.describe StringCalculator, "#add" do
     end
 
     # Why might your solution produce the value 4?
-    # "1\n2".to_i returns 1
+    # to_i with a valid base always returns a valid integer
+    # in this case, it truncates at the first non-digit character
+    # so "1\n2".to_i returns 1
   end
 end
