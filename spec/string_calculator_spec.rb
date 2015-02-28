@@ -11,5 +11,11 @@ RSpec.describe StringCalculator, "#add" do
     expect(StringCalculator.add("")).to eql(0)
   end
 
-  # more tests go here
+  it "returns 0 for '0'" do 
+    expect(StringCalculator.add("0")).to eql 0
+  end
+
+  it "returns 5 for '5'" do 
+    expect(StringCalculator.add("5")).to eql 5
+  end
 end
