@@ -1,10 +1,11 @@
 module StringCalculator
 
   def self.add(string)
-    numbers = get_numbers(string)
+    numbers   = get_numbers(string)
+    negatives = numbers.select { |i| i < 0 }
 
-    if numbers.any? { |i| i < 0 }
-      raise "Negative number error"
+    if negatives.any? 
+      raise "Negative numbers not allowed: #{negatives}"
     else
       numbers.inject(0, :+)
     end
