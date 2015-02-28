@@ -81,4 +81,20 @@ RSpec.describe StringCalculator, "#add" do
       expect(StringCalculator.add("//;\n2;5")).to eql 7
     end
   end
+
+  # 8
+
+  context "throw exception when there's a negative number" do 
+    it "raises exception for 1,-1" do 
+      expect do 
+        StringCalculator.add("1,-1")
+      end.to raise_error
+    end
+
+    it "raises exception for //;2\n3;-1" do 
+      expect do 
+        StringCalculator.add("//;2\n3;-1")
+      end.to raise_error
+    end
+  end
 end
