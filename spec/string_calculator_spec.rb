@@ -18,4 +18,12 @@ RSpec.describe StringCalculator, "#add" do
   it "returns 5 for '5'" do 
     expect(StringCalculator.add("5")).to eql 5
   end
+
+  it "returns 3 for '1,2'" do 
+    expect(StringCalculator.add("1,2")).to eql 3
+  end
+
+  it "returns 16 for '7,9'" do 
+    expect(StringCalculator.add("7,9")).to eql 16
+  end
 end
