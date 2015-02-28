@@ -60,4 +60,15 @@ RSpec.describe StringCalculator, "#add" do
       expect(StringCalculator.add('2')).to eql 2
     end
   end
+
+  # 6
+
+  context "when delimiting by either a comma or newline" do 
+    it "returns 6 for '1\n2,3'" do 
+      expect(StringCalculator.add("1\n2,3")).to eql 6
+    end
+
+    # Why might your solution produce the value 4?
+    # "1\n2".to_i returns 1
+  end
 end
