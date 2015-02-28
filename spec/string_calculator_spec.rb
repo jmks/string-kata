@@ -107,4 +107,20 @@ RSpec.describe StringCalculator, "#add" do
       end.to raise_error /-1, -5/
     end
   end
+
+  # 10
+
+  context "when numbers are larger than 1000, ignore them" do 
+    it "returns 0 for '1337,7331'" do 
+      expect(StringCalculator.add("1337,7331")).to eql 0
+    end
+
+    it "returns 1 for '1001,1'" do 
+      expect(StringCalculator.add("1001,1")).to eql 1
+    end
+
+    it "returns 1 for '1001,1,1867'" do 
+      expect(StringCalculator.add("1001,1,1867")).to eql 1
+    end
+  end
 end
