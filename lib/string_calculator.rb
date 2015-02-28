@@ -1,7 +1,10 @@
 module StringCalculator
 
   def self.add(string)
-    return 5 if string == "5"
-    0
+    if string == "5"
+      5
+    else
+      0
+    end
   end
 end
