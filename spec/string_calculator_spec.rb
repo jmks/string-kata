@@ -97,4 +97,14 @@ RSpec.describe StringCalculator, "#add" do
       end.to raise_error
     end
   end
+
+  # 9
+
+  context "when negative numbers are present" do 
+    it "should list -1 and -5 in the exception message for '1,-1,3,-5'" do 
+      expect do
+        StringCalculator.add("1,-1,3,-5")
+      end.to raise_error /-1, -5/
+    end
+  end
 end
