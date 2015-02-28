@@ -131,4 +131,12 @@ RSpec.describe StringCalculator, "#add" do
       expect(StringCalculator.add("1000,1")).to eql 1001
     end
   end
+
+  # 11
+
+  context "multi-character delimiters input as '//[delimiter]'" do 
+    it "returns 55 for '\\[chickens]22chickens11chickens22chickens'" do 
+      expect(StringCalculator.add('\\[chickens]22chickens11chickens22chickens')).to eql 55
+    end
+  end
 end
