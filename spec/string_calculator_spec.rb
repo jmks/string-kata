@@ -48,8 +48,8 @@ RSpec.describe StringCalculator, "#add" do
   # 5
 
   context "when any number of comma-separated numbers as a string then" do 
-    it "returns 4002 for '1558,2,2442'" do 
-      expect(StringCalculator.add('1558,2,2442')).to eql 4002
+    it "returns 4002 for '1000,558,2,1000,1000,442'" do 
+      expect(StringCalculator.add('1000,558,2,1000,1000,442')).to eql 4002
     end
 
     it "returns 161 for '15,22,45,79'" do 
@@ -58,6 +58,10 @@ RSpec.describe StringCalculator, "#add" do
 
     it "returns 2 for '2'" do 
       expect(StringCalculator.add('2')).to eql 2
+    end
+
+    it "returns 0 for ''" do 
+      expect(StringCalculator.add('')).to eql 0
     end
   end
 
@@ -121,6 +125,10 @@ RSpec.describe StringCalculator, "#add" do
 
     it "returns 1 for '1001,1,1867'" do 
       expect(StringCalculator.add("1001,1,1867")).to eql 1
+    end
+
+    it "returns 1001 for '1000,1'" do 
+      expect(StringCalculator.add("1000,1")).to eql 1001
     end
   end
 end

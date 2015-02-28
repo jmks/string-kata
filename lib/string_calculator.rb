@@ -12,6 +12,6 @@ module StringCalculator
   end
 
   def self.get_numbers(string)
-    string.scan(/-?\d+/).map(&:to_i)
+    string.scan(/-?\d+/).map(&:to_i).select { |i| i <= 1000 }
   end
 end
