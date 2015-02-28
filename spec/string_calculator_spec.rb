@@ -35,13 +35,29 @@ RSpec.describe StringCalculator, "#add" do
 
   # 4
 
-  context "when two digits separated by a comma it should sum them" do 
+  context "when two digits separated by a comma it should sum then" do 
     it "returns 57 for '12,45'" do 
       expect(StringCalculator.add('12,45')).to eql 57
     end
 
     it "returns 201 for '42,159'" do 
       expect(StringCalculator.add('42,159')).to eql 201
+    end
+  end
+
+  # 5
+
+  context "when any number of comma-separated numbers as a string then" do 
+    it "returns 4002 for '1558,2,2442'" do 
+      expect(StringCalculator.add('1558,2,2442')).to eql 4002
+    end
+
+    it "returns 161 for '15,22,45,79'" do 
+      expect(StringCalculator.add('15,22,45,79')).to eql 161
+    end
+
+    it "returns 2 for '2'" do 
+      expect(StringCalculator.add('2')).to eql 2
     end
   end
 end
